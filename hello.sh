@@ -427,7 +427,52 @@ then
 else
    echo "文件不存在"
 fi
+
+#Shell echo命令
+#转义字符
+echo "\"It is a test\""
+
+#接收输入
+read name 
+echo "$name It is a test"
+
+echo -e "OK! \n" # -e 开启转义
+echo "It is a test"
+
+echo -e "OK! \c" # -e 开启转义 \c 不换行
+echo "It is a test"
+
+echo "It is a test" > myfile
+echo "It is a test" > myfile.txt
+
+#原样输出字符串，不进行转义或取变量(用单引号)
+name=yingtingyao
+echo '$name\"'
+echo "$name\""=echo ''$name\"''
+
+echo `date`
+echo输出的字符串总结
+===================================================================
+       能否引用变量  |  能否引用转移符  |  能否引用文本格式符(如：换行符、制表符)
+单引号  |           否           |             否             |                             否
+双引号  |           能           |             能             |                             能
+无引号  |           能           |             能             |                             否  
+===================================================================                        
+
+read firstStr secondStr
+echo "第一个参数:$firstStr; 第二个参数:$secondStr"
+$ sh hello.sh
+2 3 4 5
+第一个参数:2; 第二个参数:3 4 5
+
+read -p "请输入一段文字:" -n 6 -t 10 -s password
+echo -e "\npassword is $password"
+ -p 输入提示文字 
+ -n 输入字符长度限制(达到6位，自动结束) 
+ -t 输入限时 
+ -s 隐藏输入内容 
 COMMENT
+
 
 
 
