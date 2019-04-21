@@ -472,6 +472,7 @@ echo -e "\npassword is $password"
  -t 输入限时 
  -s 隐藏输入内容 
 COMMENT
+printf "Hello, Shell\n"
 
 
 
